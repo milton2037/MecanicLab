@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Usuarios, roles y seguridad')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-interno('core', 'usuarios')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Usuarios, roles y seguridad</h1>
+				<p>Autenticación interna, control de acceso por rol y auditoría de acciones.</p>
+			</div>
+		</div>
+		<section class="panel">
+			<table>
+				<thead><tr><th>Usuario</th><th>Rol</th><th>Ámbito</th><th>Última acción auditada</th></tr></thead>
+				<tbody>
+					<tr><td>lina.garcia</td><td>Administrador</td><td>Core</td><td>Cambio de rol · 21 sep 18:02</td></tr>
+					<tr><td>andres.perez</td><td>Director técnico</td><td>CDA</td><td>Firmó FUR · 22 sep 09:11</td></tr>
+					<tr><td>sofia.ramos</td><td>Jefe de taller</td><td>Taller</td><td>Movió OT a pruebas · 22 sep 10:04</td></tr>
+					<tr><td>caja01</td><td>Cajero</td><td>Core / ambos negocios</td><td>Pago en caja · 22 sep 11:20</td></tr>
+				</tbody>
+			</table>
+		</section>
+	</main>
+</div>
+</body>
+</html>

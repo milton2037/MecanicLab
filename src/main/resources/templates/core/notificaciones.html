@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Notificaciones')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-interno('core', 'notificaciones')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Notificaciones</h1>
+				<p>Servicio único de correo, SMS y WhatsApp, con plantillas y registro de consentimiento.</p>
+			</div>
+		</div>
+		<section class="panel">
+			<table>
+				<thead><tr><th>Plantilla</th><th>Canal</th><th>Origen</th><th>Consentimiento</th></tr></thead>
+				<tbody>
+					<tr><td>Confirmación de cita</td><td>Correo + WhatsApp</td><td>Portal</td><td>Aceptado</td></tr>
+					<tr><td>Hallazgo / cotización</td><td>WhatsApp</td><td>Taller</td><td>Aceptado</td></tr>
+					<tr><td>Resultado FUR</td><td>Correo + SMS</td><td>CDA</td><td>Aceptado correo; SMS rechazado</td></tr>
+					<tr><td>Comprobante de pago</td><td>Correo</td><td>Core</td><td>Aceptado</td></tr>
+				</tbody>
+			</table>
+		</section>
+	</main>
+</div>
+</body>
+</html>

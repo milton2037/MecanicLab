@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Notificaciones y aprobaciones')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-portal('aprobaciones')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Notificaciones y aprobaciones</h1>
+				<p>Alertas por correo, SMS o WhatsApp según consentimiento. El diagnóstico muestra evidencias y se autoriza ítem por ítem.</p>
+			</div>
+			<div class="user-chip">Sesión simulada</div>
+		</div>
+		<section class="panel">
+			<div class="panel-head"><h2 style="border:0;padding:0">Hallazgo · kit de clutch</h2><span class="badge badge-warn">Pendiente</span></div>
+			<div class="panel-body">
+				<p class="note left">El disco está vitrificado. Se adjuntan foto de campana y video de prueba en bahía.</p>
+				<div class="media">
+					<div class="photo">Foto 1</div>
+					<div class="photo">Foto 2</div>
+					<div class="photo">Video 0:18</div>
+				</div>
+				<div class="actions" style="margin-top:16px">
+					<button class="btn btn-ok" type="button">Autorizar trabajo</button>
+					<button class="btn btn-danger" type="button">Rechazar</button>
+					<a class="btn btn-ghost" th:href="@{/portal/tienda}">Ver repuestos del taller</a>
+				</div>
+			</div>
+		</section>
+		<section class="panel">
+			<h2>Canales de alerta (consentimiento)</h2>
+			<table>
+				<tbody>
+					<tr><td>Correo</td><td>Sí</td><td>Cotización enviada</td></tr>
+					<tr><td>SMS</td><td>No</td><td>—</td></tr>
+					<tr><td>WhatsApp</td><td>Sí</td><td>Hallazgo en diagnóstico</td></tr>
+				</tbody>
+			</table>
+		</section>
+	</main>
+</div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(titulo)">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title th:text="${titulo} + ' | MecanicLab'">MecanicLab</title>
+	<link rel="stylesheet" th:href="@{/css/app.css}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<aside th:fragment="sidebar-interno(area, activo)" class="sidebar">
+	<a class="mark" th:href="@{/dashboard}"><span>ML</span> MecanicLab</a>
+	<nav class="nav">
+		<a th:href="@{/dashboard}" th:classappend="${activo == 'hub'} ? 'active'">Mapa de módulos</a>
+		<a th:href="@{/portal}">Portal del cliente</a>
+
+		<th:block th:if="${area == 'hub'}">
+			<p class="nav-label">Bloques</p>
+			<a th:href="@{/core}">Núcleo (Core)</a>
+			<a th:href="@{/cda}">CDA</a>
+			<a th:href="@{/taller}">Taller</a>
+		</th:block>
+
+		<th:block th:if="${area == 'core'}">
+			<p class="nav-label">Núcleo compartido</p>
+			<a th:href="@{/core}" th:classappend="${activo == 'core'} ? 'active'">Resumen Core</a>
+			<a th:href="@{/core/usuarios}" th:classappend="${activo == 'usuarios'} ? 'active'">Usuarios y seguridad</a>
+			<a th:href="@{/core/clientes-vehiculos}" th:classappend="${activo == 'clientes'} ? 'active'">Clientes y vehículos</a>
+			<a th:href="@{/core/sedes-agenda}" th:classappend="${activo == 'sedes'} ? 'active'">Sedes y agenda</a>
+			<a th:href="@{/core/recepcion}" th:classappend="${activo == 'recepcion'} ? 'active'">Recepción e ingreso</a>
+			<a th:href="@{/core/seguimiento}" th:classappend="${activo == 'seguimiento'} ? 'active'">Seguimiento</a>
+			<a th:href="@{/core/notificaciones}" th:classappend="${activo == 'notificaciones'} ? 'active'">Notificaciones</a>
+			<a th:href="@{/core/pagos-facturacion}" th:classappend="${activo == 'pagos'} ? 'active'">Pagos y facturación</a>
+			<a th:href="@{/core/hoja-vida}" th:classappend="${activo == 'hoja'} ? 'active'">Hoja de vida</a>
+			<a th:href="@{/core/reportes}" th:classappend="${activo == 'reportes'} ? 'active'">Reportes</a>
+			<p class="nav-label">Negocios</p>
+			<a th:href="@{/cda}">Abrir CDA</a>
+			<a th:href="@{/taller}">Abrir taller</a>
+		</th:block>
+
+		<th:block th:if="${area == 'cda'}">
+			<p class="nav-label">Depende de</p>
+			<a th:href="@{/core}">Núcleo (Core)</a>
+			<p class="nav-label">Módulos CDA</p>
+			<a th:href="@{/cda}" th:classappend="${activo == 'cda'} ? 'active'">Resumen CDA</a>
+			<a th:href="@{/cda/programacion}" th:classappend="${activo == 'programacion'} ? 'active'">Pista y turnos</a>
+			<a th:href="@{/cda/inspeccion}" th:classappend="${activo == 'inspeccion'} ? 'active'">Inspección TM</a>
+			<a th:href="@{/cda/equipos}" th:classappend="${activo == 'equipos'} ? 'active'">Equipos de medición</a>
+			<a th:href="@{/cda/resultado-fur}" th:classappend="${activo == 'fur'} ? 'active'">Resultado y FUR</a>
+		</th:block>
+
+		<th:block th:if="${area == 'taller'}">
+			<p class="nav-label">Depende de</p>
+			<a th:href="@{/core}">Núcleo (Core)</a>
+			<p class="nav-label">Módulos taller</p>
+			<a th:href="@{/taller}" th:classappend="${activo == 'taller'} ? 'active'">Resumen taller</a>
+			<a th:href="@{/taller/diagnostico}" th:classappend="${activo == 'diagnostico'} ? 'active'">Diagnóstico</a>
+			<a th:href="@{/taller/cotizacion}" th:classappend="${activo == 'cotizacion'} ? 'active'">Cotización</a>
+			<a th:href="@{/taller/kanban}" th:classappend="${activo == 'kanban'} ? 'active'">Orden y Kanban</a>
+			<a th:href="@{/taller/asignacion}" th:classappend="${activo == 'asignacion'} ? 'active'">Mecánicos y bahías</a>
+			<a th:href="@{/taller/inventario}" th:classappend="${activo == 'inventario'} ? 'active'">Inventario</a>
+			<a th:href="@{/taller/proveedores}" th:classappend="${activo == 'proveedores'} ? 'active'">Proveedores</a>
+		</th:block>
+
+		<p class="nav-label">Sesión</p>
+		<a th:href="@{/login}">Cerrar sesión</a>
+	</nav>
+</aside>
+
+<aside th:fragment="sidebar-portal(activo)" class="sidebar">
+	<a class="mark" th:href="@{/portal}"><span>ML</span> Portal</a>
+	<nav class="nav">
+		<a th:href="@{/portal}" th:classappend="${activo == 'portal'} ? 'active'">Inicio</a>
+		<a th:href="@{/portal/citas}" th:classappend="${activo == 'citas'} ? 'active'">Agendar cita</a>
+		<a th:href="@{/portal/seguimiento}" th:classappend="${activo == 'seguimiento'} ? 'active'">Consultar estado</a>
+		<a th:href="@{/portal/aprobaciones}" th:classappend="${activo == 'aprobaciones'} ? 'active'">Aprobaciones</a>
+		<a th:href="@{/portal/tienda}" th:classappend="${activo == 'tienda'} ? 'active'">Repuestos</a>
+		<a th:href="@{/portal/pagos}" th:classappend="${activo == 'pagos'} ? 'active'">Pagos</a>
+		<a th:href="@{/portal/cuenta}" th:classappend="${activo == 'cuenta'} ? 'active'">Mi cuenta</a>
+		<p class="nav-label">Otros accesos</p>
+		<a th:href="@{/dashboard}">Acceso interno</a>
+		<a th:href="@{/login}">Salir</a>
+	</nav>
+</aside>
+</body>
+</html>

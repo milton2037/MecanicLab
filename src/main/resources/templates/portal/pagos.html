@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Pasarela de pagos')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-portal('pagos')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Pasarela de pagos</h1>
+				<p>Paga servicios y repuestos con tarjeta, PSE o billeteras. Aquí se entrega el comprobante; la factura electrónica la emite Pagos y Facturación del Core.</p>
+			</div>
+		</div>
+		<section class="grid grid-2">
+			<div class="panel">
+				<h2>Pagar ahora</h2>
+				<div class="panel-body">
+					<label>Concepto</label>
+					<select>
+						<option>Mano de obra + kit clutch (taller) — $1.420.000</option>
+						<option>Revisión técnico-mecánica (CDA) — $180.000</option>
+					</select>
+					<label>Medio</label>
+					<select><option>Tarjeta</option><option>PSE</option><option>Nequi / Daviplata</option></select>
+					<button class="btn btn-primary" type="button">Pagar y ver comprobante</button>
+					<p class="note left">Requiere cuenta verificada por OTP.</p>
+				</div>
+			</div>
+			<div class="panel">
+				<h2>Comprobante de ejemplo</h2>
+				<div class="panel-body">
+					<p><strong>CMP-88A2</strong></p>
+					<p class="note left">Pago en línea registrado. Factura electrónica pendiente de emisión por el módulo de Pagos y Facturación (Core), a nombre del negocio que prestó el servicio.</p>
+				</div>
+			</div>
+		</section>
+	</main>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Reportes y analítica')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-interno('core', 'reportes')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Reportes y analítica</h1>
+				<p>Indicadores por negocio. Solo se muestran negocios activos.</p>
+			</div>
+		</div>
+		<section class="grid grid-4">
+			<article class="metric"><span>CDA · inspecciones hoy</span><strong>27</strong></article>
+			<article class="metric"><span>CDA · % aprobación</span><strong>81%</strong></article>
+			<article class="metric"><span>Taller · OT abiertas</span><strong>14</strong></article>
+			<article class="metric"><span>Taller · bahías ocupadas</span><strong>5/6</strong></article>
+		</section>
+		<p class="note left">Si un negocio se desactiva, su bloque de indicadores desaparece de este tablero.</p>
+	</main>
+</div>
+</body>
+</html>

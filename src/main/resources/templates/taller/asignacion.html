@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Asignación de mecánicos y bahías')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-interno('taller', 'asignacion')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Asignación de mecánicos y bahías</h1>
+				<p>Carga de trabajo, tiempos por técnico y ocupación de bahías.</p>
+			</div>
+		</div>
+		<section class="panel">
+			<table>
+				<thead><tr><th>Técnico</th><th>Bahía</th><th>OT</th><th>Carga hoy</th><th>Estado</th></tr></thead>
+				<tbody>
+					<tr><td>Julián Ortiz</td><td>1</td><td>K7M-9Q2X</td><td>6.5 h</td><td><span class="badge badge-warn">Ocupado</span></td></tr>
+					<tr><td>Paola Díaz</td><td>2</td><td>—</td><td>2.0 h</td><td><span class="badge badge-ok">Libre 10:00</span></td></tr>
+					<tr><td>Héctor Ruiz</td><td>3</td><td>Q8R-77NM</td><td>8.0 h</td><td><span class="badge badge-danger">Tope</span></td></tr>
+				</tbody>
+			</table>
+		</section>
+	</main>
+</div>
+</body>
+</html>

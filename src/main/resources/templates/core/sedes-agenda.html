@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Sedes y agenda')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-interno('core', 'sedes')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Sedes y agenda</h1>
+				<p>Horarios y capacidad: pistas del CDA y bahías del taller. Cada negocio agenda sobre su propio cupo.</p>
+			</div>
+		</div>
+		<section class="panel">
+			<table>
+				<thead><tr><th>Sede</th><th>Recurso</th><th>Negocio</th><th>Horario</th><th>Capacidad</th></tr></thead>
+				<tbody>
+					<tr><td>Norte</td><td>Pista 1 — gases</td><td>CDA</td><td>07:00–17:00</td><td>8 turnos/hora</td></tr>
+					<tr><td>Norte</td><td>Pista 2 — frenos / luces</td><td>CDA</td><td>07:00–17:00</td><td>6 turnos/hora</td></tr>
+					<tr><td>Norte</td><td>Bahía 1</td><td>Taller</td><td>07:30–18:00</td><td>1 OT en curso</td></tr>
+					<tr><td>Norte</td><td>Bahía 2</td><td>Taller</td><td>07:30–18:00</td><td>Libre 10:00</td></tr>
+				</tbody>
+			</table>
+		</section>
+	</main>
+</div>
+</body>
+</html>

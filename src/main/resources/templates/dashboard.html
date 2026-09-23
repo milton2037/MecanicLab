@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Mapa de módulos')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-interno('hub', 'hub')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Mapa de módulos</h1>
+				<p>Cuatro bloques. CDA y Taller no se cruzan: ambos consumen el Core. Datos de ejemplo, sin persistencia.</p>
+			</div>
+			<div class="user-chip">Personal interno</div>
+		</div>
+		<section class="grid grid-4">
+			<article class="modulo">
+				<b>Front-end</b>
+				<h3>Portal del cliente</h3>
+				<p>Citas, consulta por código, aprobaciones, tienda de taller, pagos y cuenta con OTP.</p>
+				<a class="btn btn-primary" th:href="@{/portal}">Abrir portal</a>
+			</article>
+			<article class="modulo">
+				<b>Compartido</b>
+				<h3>Núcleo (Core)</h3>
+				<p>Usuarios, vehículos, sedes, recepción, seguimiento, notificaciones, facturación y reportes.</p>
+				<a class="btn btn-primary" th:href="@{/core}">Abrir Core</a>
+			</article>
+			<article class="modulo">
+				<b>Independiente</b>
+				<h3>CDA</h3>
+				<p>Pistas, inspección técnico-mecánica, equipos, FUR, RUNT/SICOV y reinspección.</p>
+				<a class="btn btn-primary" th:href="@{/cda}">Abrir CDA</a>
+			</article>
+			<article class="modulo">
+				<b>Independiente</b>
+				<h3>Taller</h3>
+				<p>Diagnóstico, cotización, Kanban, bahías, inventario y compras.</p>
+				<a class="btn btn-primary" th:href="@{/taller}">Abrir taller</a>
+			</article>
+		</section>
+		<section class="panel">
+			<h2>Estados visibles al cliente</h2>
+			<table>
+				<thead>
+					<tr><th>Proceso</th><th>Estados en orden</th><th>Los publica</th></tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>CDA</td>
+						<td>Agendado → Recibido → En inspección → Aprobado o Rechazado → Pendiente de reinspección → Entregado</td>
+						<td>Inspector y director técnico</td>
+					</tr>
+					<tr>
+						<td>Taller</td>
+						<td>Agendado → Recibido → En diagnóstico → Esperando autorización → Esperando repuestos y pago → En reparación → En pruebas finales → Listo para entrega → Entregado</td>
+						<td>Mecánico, jefe de taller y sistema</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+	</main>
+</div>
+</body>
+</html>

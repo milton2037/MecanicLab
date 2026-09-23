@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Recepción e ingreso')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-interno('core', 'recepcion')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Recepción e ingreso</h1>
+				<p>Registra la entrada, genera el Código Único de Seguimiento (no secuencial, alfanumérico o QR) y la lista de chequeo.</p>
+			</div>
+		</div>
+		<section class="grid grid-2">
+			<div class="panel">
+				<div class="panel-head">Código único
+					<div class="qr" title="QR de ejemplo"></div>
+				</div>
+				<div class="panel-body">
+					<p style="font-size:28px;margin:0 0 8px"><strong>K7M-9Q2X</strong></p>
+					<p class="note left">No correlativo. El cliente lo usa en el portal sin iniciar sesión.</p>
+					<label>Negocios del ingreso</label>
+					<select><option>Mixto: CDA + Taller</option><option>Solo CDA</option><option>Solo taller</option></select>
+					<label>Placa</label><input value="GHY452">
+				</div>
+			</div>
+			<div class="panel">
+				<h2>Lista de chequeo de entrada</h2>
+				<div class="panel-body checklist">
+					<label><input type="checkbox" checked> Rayones documentados</label>
+					<label><input type="checkbox" checked> Accesorios (gata, herramientas)</label>
+					<label><input type="checkbox" checked> Nivel de combustible 1/4</label>
+					<label><input type="checkbox"> Kit de carretera completo</label>
+					<label>Observación de entrega</label>
+					<textarea>Se recibe con cita CDA 08:40 y diagnóstico de clutch en taller.</textarea>
+					<button class="btn btn-primary" type="button">Registrar ingreso</button>
+				</div>
+			</div>
+		</section>
+	</main>
+</div>
+</body>
+</html>

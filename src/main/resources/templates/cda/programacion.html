@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Programación de pista')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-interno('cda', 'programacion')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Programación de pista y turnos</h1>
+				<p>Cola por línea de inspección a partir de las citas del Core.</p>
+			</div>
+		</div>
+		<section class="grid grid-3">
+			<div class="lane">
+				<h3>Pista 1 · Gases</h3>
+				<div class="ticket"><b>K7M-9Q2X</b>GHY452 · 08:40</div>
+				<div class="ticket"><b>P3L-2C8R</b>KLM219 · 09:00</div>
+			</div>
+			<div class="lane">
+				<h3>Pista 2 · Frenos / luces</h3>
+				<div class="ticket"><b>K7M-9Q2X</b>En tránsito desde gases</div>
+				<div class="ticket"><b>H4N-11WQ</b>PQR880 · 09:15</div>
+			</div>
+			<div class="lane">
+				<h3>Pista 3 · Alineación / chasis</h3>
+				<div class="ticket"><b>—</b>Sin cola</div>
+			</div>
+		</section>
+	</main>
+</div>
+</body>
+</html>

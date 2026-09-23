@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Proveedores y compras')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-interno('taller', 'proveedores')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Proveedores y compras</h1>
+				<p>Alerta de stock mínimo y órdenes de compra. Si falta un repuesto autorizado, la OT queda en espera de repuestos.</p>
+			</div>
+		</div>
+		<section class="panel">
+			<table>
+				<thead><tr><th>Proveedor</th><th>Ítem</th><th>Mínimo</th><th>OC</th><th>Impacto</th></tr></thead>
+				<tbody>
+					<tr><td>Distribuidora Andina</td><td>Pastillas Spark</td><td>4</td><td>OC-883 abierta</td><td>Q8R-77NM en espera de repuestos</td></tr>
+					<tr><td>Importadora Valeo</td><td>Kit clutch</td><td>2</td><td>—</td><td>Stock OK</td></tr>
+				</tbody>
+			</table>
+		</section>
+	</main>
+</div>
+</body>
+</html>

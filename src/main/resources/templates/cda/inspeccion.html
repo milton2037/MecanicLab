@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Inspección técnico-mecánica')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-interno('cda', 'inspeccion')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Inspección técnico-mecánica</h1>
+				<p>Plantillas mecanizadas y visuales. Captura manual o desde equipos. Defectos tipo A o B según norma vigente.</p>
+			</div>
+		</div>
+		<section class="panel">
+			<table>
+				<thead><tr><th>Prueba</th><th>Origen</th><th>Resultado</th><th>Defecto</th><th>Evidencia</th></tr></thead>
+				<tbody>
+					<tr><td>Frenos</td><td>Equipo</td><td>Dentro de umbral</td><td>—</td><td>Registro 08:51</td></tr>
+					<tr><td>Gases</td><td>Equipo</td><td>CO elevado</td><td><span class="badge badge-danger">A</span></td><td>Curva + foto sonda</td></tr>
+					<tr><td>Luces</td><td>Equipo</td><td>Alineación OK</td><td>—</td><td>Captura luxómetro</td></tr>
+					<tr><td>Suspensión</td><td>Manual</td><td>Holgura leve</td><td><span class="badge badge-warn">B</span></td><td>Foto rótula</td></tr>
+					<tr><td>Alineación</td><td>Equipo</td><td>Pendiente</td><td>—</td><td>—</td></tr>
+					<tr><td>Chasis</td><td>Visual</td><td>Sin corrosión estructural</td><td>—</td><td>Video foso</td></tr>
+				</tbody>
+			</table>
+		</section>
+	</main>
+</div>
+</body>
+</html>

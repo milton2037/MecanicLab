@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Diagnóstico mecánico')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-interno('taller', 'diagnostico')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Diagnóstico y evaluación mecánica</h1>
+				<p>El mecánico registra hallazgos, adjunta evidencias, redacta el informe y selecciona repuestos.</p>
+			</div>
+		</div>
+		<section class="grid grid-2">
+			<div class="panel">
+				<h2>Informe K7M-9Q2X</h2>
+				<div class="panel-body">
+					<label>Hallazgo</label>
+					<textarea>Disco de clutch vitrificado. Patina en volante. Se recomienda kit completo.</textarea>
+					<div class="media">
+						<div class="photo">Foto campana</div>
+						<div class="photo">Foto disco</div>
+						<div class="photo">Video 0:18</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel">
+				<h2>Repuestos requeridos</h2>
+				<table>
+					<tbody>
+						<tr><td>Kit clutch Valeo</td><td>1</td></tr>
+						<tr><td>Rodamiento collarin SKF</td><td>1</td></tr>
+					</tbody>
+				</table>
+				<div class="panel-body">
+					<button class="btn btn-primary" type="button">Enviar a cotización</button>
+				</div>
+			</div>
+		</section>
+	</main>
+</div>
+</body>
+</html>

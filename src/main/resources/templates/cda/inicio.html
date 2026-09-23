@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('CDA')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-interno('cda', 'cda')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Módulos del CDA</h1>
+				<p>Independiente del taller. Consume clientes, agenda, recepción y facturación del Core.</p>
+			</div>
+			<div class="user-chip">Director técnico</div>
+		</div>
+		<section class="grid grid-2">
+			<article class="modulo"><b>Cola</b><h3>Programación de pista</h3><p>Organiza vehículos por línea a partir de las citas.</p><a class="btn btn-primary" th:href="@{/cda/programacion}">Abrir</a></article>
+			<article class="modulo"><b>Norma</b><h3>Inspección TM</h3><p>Pruebas, defectos A/B y evidencias de cada etapa.</p><a class="btn btn-primary" th:href="@{/cda/inspeccion}">Abrir</a></article>
+			<article class="modulo"><b>Hardware</b><h3>Equipos de medición</h3><p>Datos de equipos y control de calibración.</p><a class="btn btn-primary" th:href="@{/cda/equipos}">Abrir</a></article>
+			<article class="modulo"><b>Cierre</b><h3>Resultado y FUR</h3><p>Aprobado o rechazado, RUNT/SICOV y reinspección.</p><a class="btn btn-primary" th:href="@{/cda/resultado-fur}">Abrir</a></article>
+		</section>
+	</main>
+</div>
+</body>
+</html>

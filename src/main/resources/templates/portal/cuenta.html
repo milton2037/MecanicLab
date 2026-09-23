@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Cuenta del cliente')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-portal('cuenta')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Cuenta y autenticación</h1>
+				<p>Registro, inicio con OTP y consulta de vehículos e historial. Obligatorio para autorizar y pagar.</p>
+			</div>
+		</div>
+		<section class="grid grid-2">
+			<div class="panel">
+				<h2>Verificación OTP</h2>
+				<div class="panel-body">
+					<label>Celular o correo</label>
+					<input value="3001234567">
+					<label>Código de un solo uso</label>
+					<input placeholder="6 dígitos">
+					<div class="actions">
+						<button class="btn btn-ghost" type="button">Enviar OTP</button>
+						<button class="btn btn-primary" type="button">Verificar</button>
+					</div>
+				</div>
+			</div>
+			<div class="panel">
+				<h2>Mis vehículos</h2>
+				<table>
+					<thead><tr><th>Placa</th><th>Vehículo</th><th>Último servicio</th></tr></thead>
+					<tbody>
+						<tr><td>GHY452</td><td>Mazda 3 2018</td><td>Ingreso mixto K7M-9Q2X</td></tr>
+						<tr><td>KLM219</td><td>Spark GT</td><td>CDA aprobado</td></tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+	</main>
+</div>
+</body>
+</html>

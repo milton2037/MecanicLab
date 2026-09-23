@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Cotización y presupuestos')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-interno('taller', 'cotizacion')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Cotización y presupuestos</h1>
+				<p>El asesor convierte el informe en cotización (mano de obra y repuestos), la envía al cliente y registra la decisión ítem por ítem.</p>
+			</div>
+		</div>
+		<section class="panel">
+			<table>
+				<thead><tr><th>Ítem</th><th>Tipo</th><th>Valor</th><th>Decisión del cliente</th></tr></thead>
+				<tbody>
+					<tr><td>Mano de obra clutch</td><td>MO</td><td>$380.000</td><td><span class="badge badge-ok">Autorizado</span></td></tr>
+					<tr><td>Kit clutch Valeo</td><td>Repuesto</td><td>$890.000</td><td><span class="badge badge-ok">Autorizado</span></td></tr>
+					<tr><td>Rectificado de volante</td><td>MO</td><td>$120.000</td><td><span class="badge badge-danger">Rechazado</span></td></tr>
+				</tbody>
+			</table>
+			<div class="panel-body actions">
+				<button class="btn btn-ghost" type="button">Enviar al portal</button>
+				<button class="btn btn-primary" type="button">Registrar decisiones</button>
+			</div>
+		</section>
+	</main>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Iniciar sesión')}"></head>
+<body>
+	<main class="login-shell">
+		<section class="login-brand">
+			<div class="mark"><span>ML</span> MecanicLab</div>
+			<div>
+				<h1>Portal, Core, CDA y Taller en un mismo sistema.</h1>
+				<p>El CDA y el taller son independientes y solo dependen del núcleo compartido. El cliente agenda, consulta y aprueba desde su portal.</p>
+			</div>
+			<div class="stats-row">
+				<div><strong>CDA</strong>Pistas e inspección</div>
+				<div><strong>Taller</strong>Diagnóstico y OT</div>
+				<div><strong>Core</strong>Agenda, pagos y seguimiento</div>
+			</div>
+		</section>
+		<section class="login-panel">
+			<div class="card">
+				<h2>Acceso</h2>
+				<p class="hint">Vistas iniciales sin base de datos ni autenticación real.</p>
+				<form th:action="@{/login}" method="post">
+					<label for="usuario">Usuario interno</label>
+					<input id="usuario" name="usuario" type="text" placeholder="recepcion · inspector · asesor">
+					<label for="clave">Contraseña</label>
+					<input id="clave" name="clave" type="password" placeholder="••••••••">
+					<button class="btn btn-primary btn-block" type="submit">Entrar al mapa interno</button>
+				</form>
+				<div class="actions" style="margin-top:14px">
+					<a class="btn btn-ghost btn-block" th:href="@{/portal}">Portal del cliente</a>
+					<a class="btn btn-ghost btn-block" th:href="@{/portal/seguimiento}">Consultar con código (sin sesión)</a>
+				</div>
+			</div>
+		</section>
+	</main>
+</body>
+</html>

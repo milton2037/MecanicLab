@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Agendamiento y citas')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-portal('citas')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Agendamiento y citas</h1>
+				<p>Elige sede, fecha, hora y tipo de servicio. La disponibilidad se validará contra Sedes y Agenda del Core.</p>
+			</div>
+		</div>
+		<section class="grid grid-2">
+			<div class="panel">
+				<h2>Nueva cita</h2>
+				<div class="panel-body">
+					<label>Sede</label>
+					<select><option>CDA / Taller Norte — Calle 80</option><option>Sede Sur — Autopista</option></select>
+					<label>Tipo de servicio</label>
+					<select>
+						<option>Revisión técnico-mecánica (CDA)</option>
+						<option>Servicio de taller</option>
+						<option>Ingreso mixto (CDA + Taller)</option>
+					</select>
+					<label>Fecha</label>
+					<input type="date" value="2026-09-24">
+					<label>Hora</label>
+					<select><option>08:00 — disponible</option><option>09:30 — disponible</option><option>11:00 — cupo limitado</option></select>
+					<div class="actions">
+						<button class="btn btn-primary" type="button">Validar y confirmar</button>
+					</div>
+					<p class="note left">La confirmación se enviará por el servicio de notificaciones del Core.</p>
+				</div>
+			</div>
+			<div class="panel">
+				<h2>Disponibilidad de ejemplo</h2>
+				<table>
+					<thead><tr><th>Recurso</th><th>Negocio</th><th>Cupos</th></tr></thead>
+					<tbody>
+						<tr><td>Pista 1 gases</td><td>CDA</td><td>3 libres</td></tr>
+						<tr><td>Pista 2 frenos</td><td>CDA</td><td>1 libre</td></tr>
+						<tr><td>Bahía 2</td><td>Taller</td><td>Disponible 10:00</td></tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+	</main>
+</div>
+</body>
+</html>

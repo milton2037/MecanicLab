@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Resultado, FUR y reinspección')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-interno('cda', 'fur')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Resultado, FUR y reinspección</h1>
+				<p>Emite aprobado o rechazado y el FUR, reporta a RUNT y SICOV, y gestiona la reinspección en plazo normativo.</p>
+			</div>
+		</div>
+		<section class="grid grid-2">
+			<div class="panel">
+				<h2>K7M-9Q2X</h2>
+				<div class="panel-body">
+					<p>Resultado preliminar: <span class="badge badge-danger">Rechazado</span> (defecto A en gases)</p>
+					<label>FUR</label><input value="FUR-2026-004418">
+					<label>Reporte</label>
+					<select><option>Pendiente RUNT / SICOV</option><option>Enviado</option></select>
+					<div class="actions">
+						<button class="btn btn-primary" type="button">Emitir FUR</button>
+						<button class="btn btn-ghost" type="button">Marcar envío RUNT/SICOV</button>
+					</div>
+				</div>
+			</div>
+			<div class="panel">
+				<h2>Reinspección</h2>
+				<div class="panel-body">
+					<label>Plazo normativo</label><input value="Hasta 15 días calendario · vence 07 oct 2026">
+					<label>Cita de reinspección</label><input type="date" value="2026-09-30">
+					<p class="note left">El Core publicará el estado «Pendiente de reinspección» al cliente.</p>
+				</div>
+			</div>
+		</section>
+	</main>
+</div>
+</body>
+</html>

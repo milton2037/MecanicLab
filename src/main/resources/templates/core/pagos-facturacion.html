@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Pagos y facturación')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-interno('core', 'pagos')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Pagos y facturación</h1>
+				<p>Integra la pasarela, registra pagos en línea y en caja, y emite la factura electrónica. Cada negocio factura sus servicios.</p>
+			</div>
+		</div>
+		<section class="panel">
+			<table>
+				<thead><tr><th>Pago</th><th>Negocio</th><th>Medio</th><th>Comprobante</th><th>Factura</th></tr></thead>
+				<tbody>
+					<tr><td>$180.000 RTM</td><td>CDA</td><td>Caja</td><td>CAJA-102</td><td>FE-CDA-4412</td></tr>
+					<tr><td>$1.420.000 clutch</td><td>Taller</td><td>PSE (pasarela)</td><td>CMP-88A2</td><td>Pendiente emitir</td></tr>
+				</tbody>
+			</table>
+		</section>
+	</main>
+</div>
+</body>
+</html>

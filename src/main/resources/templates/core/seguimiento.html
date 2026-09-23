@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Seguimiento del proceso')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-interno('core', 'seguimiento')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Seguimiento del proceso</h1>
+				<p>El Core no inventa estados: recibe los que publican CDA y Taller y los muestra al cliente en tiempo real.</p>
+			</div>
+		</div>
+		<section class="grid grid-2">
+			<div class="panel">
+				<h2>Publicados por CDA</h2>
+				<div class="panel-body">
+					<ul class="timeline">
+						<li class="done">Agendado <small>Sistema citas</small></li>
+						<li class="done">Recibido <small>Recepción</small></li>
+						<li class="now">En inspección <small>Inspector pista 2</small></li>
+						<li>Aprobado / Rechazado <small>Director técnico</small></li>
+						<li>Pendiente de reinspección</li>
+						<li>Entregado</li>
+					</ul>
+				</div>
+			</div>
+			<div class="panel">
+				<h2>Publicados por Taller</h2>
+				<div class="panel-body">
+					<ul class="timeline">
+						<li class="done">Agendado</li>
+						<li class="done">Recibido</li>
+						<li class="now">En diagnóstico <small>Mecánico bahía 1</small></li>
+						<li>Esperando autorización</li>
+						<li>Esperando repuestos y pago <small>Sistema + inventario</small></li>
+						<li>En reparación</li>
+						<li>En pruebas finales</li>
+						<li>Listo para entrega <small>Jefe de taller</small></li>
+						<li>Entregado</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</main>
+</div>
+</body>
+</html>

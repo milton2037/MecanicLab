@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Inventario de repuestos')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-interno('taller', 'inventario')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Inventario de repuestos y bodega</h1>
+				<p>Stock en tiempo real. La compra en línea reserva; el despacho descuenta.</p>
+			</div>
+		</div>
+		<section class="panel">
+			<table>
+				<thead><tr><th>SKU</th><th>Repuesto</th><th>Stock</th><th>Reservado web</th><th>Disponible</th></tr></thead>
+				<tbody>
+					<tr><td>CL-240-VAL</td><td>Kit clutch Valeo</td><td>4</td><td>1</td><td>3</td></tr>
+					<tr><td>COL-SKF-02</td><td>Collarin SKF</td><td>2</td><td>1</td><td>1</td></tr>
+					<tr><td>ACE-75W-MOT</td><td>Aceite caja Motul</td><td>9</td><td>0</td><td>9</td></tr>
+					<tr><td>PAD-FR-CHE</td><td>Pastillas Spark</td><td>0</td><td>0</td><td><span class="badge badge-danger">0</span></td></tr>
+				</tbody>
+			</table>
+		</section>
+	</main>
+</div>
+</body>
+</html>

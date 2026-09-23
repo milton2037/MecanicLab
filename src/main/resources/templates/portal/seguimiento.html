@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Consulta de estado')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-portal('seguimiento')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Consulta por código único</h1>
+				<p>Sin iniciar sesión ves la línea de tiempo. Evidencias, costos y pagos piden identificarse. Un ingreso mixto muestra ambas líneas bajo el mismo código.</p>
+			</div>
+		</div>
+		<section class="panel">
+			<div class="panel-body">
+				<div class="grid grid-3">
+					<div><label>Código único</label><input value="K7M-9Q2X"></div>
+					<div><label>Placa</label><input value="GHY452"></div>
+					<div style="display:flex;align-items:flex-end;padding-bottom:16px"><button class="btn btn-primary" type="button">Consultar</button></div>
+				</div>
+			</div>
+		</section>
+		<section class="grid grid-2">
+			<div class="panel">
+				<h2>Línea CDA · Mazda 3 GHY-452</h2>
+				<div class="panel-body">
+					<ul class="timeline">
+						<li class="done">Agendado <small>Inspector / sistema · 22 sep 08:12</small></li>
+						<li class="done">Recibido <small>Recepción Core · 22 sep 08:40</small></li>
+						<li class="now">En inspección <small>Inspector · pista 2</small></li>
+						<li>Aprobado o Rechazado</li>
+						<li>Pendiente de reinspección (si aplica)</li>
+						<li>Entregado</li>
+					</ul>
+				</div>
+			</div>
+			<div class="panel">
+				<h2>Línea taller · mismo código</h2>
+				<div class="panel-body">
+					<ul class="timeline">
+						<li class="done">Agendado</li>
+						<li class="done">Recibido</li>
+						<li class="now">En diagnóstico</li>
+						<li>Esperando autorización</li>
+						<li>Esperando repuestos y pago</li>
+						<li>En reparación</li>
+						<li>En pruebas finales</li>
+						<li>Listo para entrega</li>
+						<li>Entregado</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<div class="lock">Fotos, videos, costos y pagos están bloqueados. <a th:href="@{/portal/cuenta}"><strong>Identifícate</strong></a> para ver evidencias o autorizar.</div>
+	</main>
+</div>
+</body>
+</html>

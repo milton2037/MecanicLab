@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Equipos de medición')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-interno('cda', 'equipos')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Integración con equipos de medición</h1>
+				<p>Recepción de datos y control de calibración.</p>
+			</div>
+		</div>
+		<section class="panel">
+			<table>
+				<thead><tr><th>Equipo</th><th>Línea</th><th>Estado</th><th>Última calibración</th><th>Vence</th></tr></thead>
+				<tbody>
+					<tr><td>Analizador de gases #A-12</td><td>Pista 1</td><td><span class="badge badge-ok">En línea</span></td><td>02 ago 2026</td><td>02 feb 2027</td></tr>
+					<tr><td>Banco de frenos #F-04</td><td>Pista 2</td><td><span class="badge badge-ok">En línea</span></td><td>15 jul 2026</td><td>15 ene 2027</td></tr>
+					<tr><td>Alineador #L-02</td><td>Pista 3</td><td><span class="badge badge-warn">Calibración próxima</span></td><td>01 oct 2025</td><td>01 oct 2026</td></tr>
+				</tbody>
+			</table>
+		</section>
+	</main>
+</div>
+</body>
+</html>

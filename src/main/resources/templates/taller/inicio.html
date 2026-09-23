@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Taller')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-interno('taller', 'taller')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Módulos del taller</h1>
+				<p>Independiente del CDA. Comparte Core (vehículo, código, pagos, notificaciones).</p>
+			</div>
+			<div class="user-chip">Jefe de taller</div>
+		</div>
+		<section class="grid grid-3">
+			<article class="modulo"><b>Técnico</b><h3>Diagnóstico</h3><p>Hallazgos, evidencias, informe y repuestos.</p><a class="btn btn-primary" th:href="@{/taller/diagnostico}">Abrir</a></article>
+			<article class="modulo"><b>Comercial</b><h3>Cotización</h3><p>Mano de obra + piezas y decisión por ítem.</p><a class="btn btn-primary" th:href="@{/taller/cotizacion}">Abrir</a></article>
+			<article class="modulo"><b>Flujo</b><h3>Orden y Kanban</h3><p>Etapa exacta del vehículo. Alimenta el Core.</p><a class="btn btn-primary" th:href="@{/taller/kanban}">Abrir</a></article>
+			<article class="modulo"><b>Recursos</b><h3>Mecánicos y bahías</h3><p>Carga de trabajo y ocupación.</p><a class="btn btn-primary" th:href="@{/taller/asignacion}">Abrir</a></article>
+			<article class="modulo"><b>Stock</b><h3>Inventario</h3><p>Reserva en línea y descuento al despachar.</p><a class="btn btn-primary" th:href="@{/taller/inventario}">Abrir</a></article>
+			<article class="modulo"><b>Compras</b><h3>Proveedores</h3><p>Mínimos y OT en espera de repuestos.</p><a class="btn btn-primary" th:href="@{/taller/proveedores}">Abrir</a></article>
+		</section>
+	</main>
+</div>
+</body>
+</html>

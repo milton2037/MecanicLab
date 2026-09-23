@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Hoja de vida del vehículo')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-interno('core', 'hoja')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Hoja de vida del vehículo</h1>
+				<p>Historial centralizado. Cada dato conserva el negocio de origen.</p>
+			</div>
+		</div>
+		<section class="panel">
+			<table>
+				<thead><tr><th>Fecha</th><th>Evento</th><th>Detalle</th><th>Origen</th><th>Km</th></tr></thead>
+				<tbody>
+					<tr><td>12 ene 2026</td><td>Inspección TM</td><td>Aprobado FUR</td><td><span class="badge badge-info">CDA</span></td><td>79.200</td></tr>
+					<tr><td>03 jun 2026</td><td>Reparación</td><td>Pastillas delanteras</td><td><span class="badge badge-warn">Taller</span></td><td>84.010</td></tr>
+					<tr><td>22 sep 2026</td><td>Ingreso mixto</td><td>En inspección + diagnóstico clutch</td><td><span class="badge badge-violet">CDA + Taller</span></td><td>86.400</td></tr>
+				</tbody>
+			</table>
+		</section>
+	</main>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Orden de trabajo y Kanban')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-interno('taller', 'kanban')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Orden de trabajo y flujo (Kanban)</h1>
+				<p>La etapa exacta del vehículo alimenta el seguimiento del Core para el cliente.</p>
+			</div>
+		</div>
+		<section class="kanban">
+			<div class="lane"><h3>En diagnóstico</h3><div class="ticket"><b>K7M-9Q2X</b>Mazda 3 · Bahía 1</div></div>
+			<div class="lane"><h3>Esperando autorización</h3><div class="ticket"><b>M2P-44ZT</b>Onix · Esperando ítems</div></div>
+			<div class="lane"><h3>Esperando repuestos y pago</h3><div class="ticket"><b>B9C-01LA</b>Duster · kit pendiente</div></div>
+			<div class="lane"><h3>En reparación</h3><div class="ticket"><b>Q8R-77NM</b>Spark · frenos</div></div>
+			<div class="lane"><h3>Pruebas / listo</h3><div class="ticket"><b>T1V-55HK</b>Logan · listo para entrega</div></div>
+		</section>
+	</main>
+</div>
+</body>
+</html>

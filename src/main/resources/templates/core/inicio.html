@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Núcleo compartido')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-interno('core', 'core')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Núcleo compartido (Core)</h1>
+				<p>Base común de CDA y Taller. Aquí viven clientes, agenda, código único, notificaciones y facturación.</p>
+			</div>
+			<div class="user-chip">Administrador</div>
+		</div>
+		<section class="grid grid-3">
+			<article class="modulo"><b>Seguridad</b><h3>Usuarios y roles</h3><p>Acceso por rol y auditoría.</p><a class="btn btn-primary" th:href="@{/core/usuarios}">Abrir</a></article>
+			<article class="modulo"><b>Maestros</b><h3>Clientes y vehículos</h3><p>Propietario, placa, marca y modelo.</p><a class="btn btn-primary" th:href="@{/core/clientes-vehiculos}">Abrir</a></article>
+			<article class="modulo"><b>Capacidad</b><h3>Sedes y agenda</h3><p>Pistas del CDA y bahías del taller.</p><a class="btn btn-primary" th:href="@{/core/sedes-agenda}">Abrir</a></article>
+			<article class="modulo"><b>Ingreso</b><h3>Recepción</h3><p>Código único no secuencial, chequeo y entrega.</p><a class="btn btn-primary" th:href="@{/core/recepcion}">Abrir</a></article>
+			<article class="modulo"><b>Cliente</b><h3>Seguimiento</h3><p>Estados que publican CDA y Taller en tiempo real.</p><a class="btn btn-primary" th:href="@{/core/seguimiento}">Abrir</a></article>
+			<article class="modulo"><b>Canales</b><h3>Notificaciones</h3><p>Correo, SMS y WhatsApp con consentimiento.</p><a class="btn btn-primary" th:href="@{/core/notificaciones}">Abrir</a></article>
+			<article class="modulo"><b>Dinero</b><h3>Pagos y facturación</h3><p>Pasarela, caja y factura por negocio.</p><a class="btn btn-primary" th:href="@{/core/pagos-facturacion}">Abrir</a></article>
+			<article class="modulo"><b>Historial</b><h3>Hoja de vida</h3><p>Inspecciones y reparaciones con origen.</p><a class="btn btn-primary" th:href="@{/core/hoja-vida}">Abrir</a></article>
+			<article class="modulo"><b>Gestión</b><h3>Reportes</h3><p>Indicadores solo de negocios activos.</p><a class="btn btn-primary" th:href="@{/core/reportes}">Abrir</a></article>
+		</section>
+	</main>
+</div>
+</body>
+</html>

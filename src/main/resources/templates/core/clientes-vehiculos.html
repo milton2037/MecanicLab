@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Clientes y vehículos')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-interno('core', 'clientes')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Clientes y vehículos</h1>
+				<p>Base común de ambos negocios: propietario y vehículo (placa, marca, modelo).</p>
+			</div>
+		</div>
+		<section class="grid grid-2">
+			<div class="panel">
+				<h2>Propietario</h2>
+				<div class="panel-body">
+					<label>Nombre</label><input value="Carlos Méndez">
+					<label>Documento</label><input value="CC 1.023.445.889">
+					<label>Contacto</label><input value="3001234567 ·  carlos@mail.com">
+				</div>
+			</div>
+			<div class="panel">
+				<h2>Vehículo</h2>
+				<div class="panel-body">
+					<label>Placa</label><input value="GHY452">
+					<label>Marca / modelo</label><input value="Mazda 3 Grand Touring 2018">
+					<label>Kilometraje</label><input value="86.400 km">
+				</div>
+			</div>
+		</section>
+	</main>
+</div>
+</body>
+</html>

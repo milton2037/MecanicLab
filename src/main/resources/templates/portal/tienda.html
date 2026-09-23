@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Tienda de repuestos')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-portal('tienda')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Tienda de repuestos y cotización</h1>
+				<p>Solo aplica al taller. Al autorizar un arreglo, se cargan las piezas con precio, marca y garantía.</p>
+			</div>
+		</div>
+		<section class="panel">
+			<div class="panel-head">Orden K7M-9Q2X · clutch
+				<span class="badge badge-info">Taller</span>
+			</div>
+			<table>
+				<thead><tr><th>Repuesto</th><th>Marca</th><th>Garantía</th><th>Precio</th><th></th></tr></thead>
+				<tbody>
+					<tr><td>Kit clutch 240 mm</td><td>Valeo</td><td>12 meses</td><td>$890.000</td><td><button class="btn btn-primary" type="button">Al carrito</button></td></tr>
+					<tr><td>Rodamiento collarin</td><td>SKF</td><td>6 meses</td><td>$145.000</td><td><button class="btn btn-primary" type="button">Al carrito</button></td></tr>
+					<tr><td>Aceite caja 75W</td><td>Motul</td><td>—</td><td>$68.000</td><td><button class="btn btn-primary" type="button">Al carrito</button></td></tr>
+				</tbody>
+			</table>
+		</section>
+		<p class="note left">La compra en línea reserva stock en Inventario. El despacho lo descuenta el taller.</p>
+	</main>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Portal del cliente')}"></head>
+<body>
+<div class="app-shell">
+	<aside th:replace="~{fragments :: sidebar-portal('portal')}"></aside>
+	<main class="content">
+		<div class="topbar">
+			<div>
+				<h1>Portal del cliente</h1>
+				<p>Agenda, sigue el proceso con un código único y, si inicia sesión, autoriza trabajos y paga.</p>
+			</div>
+			<div class="user-chip">Visitante</div>
+		</div>
+		<section class="grid grid-3">
+			<article class="modulo"><b>Público</b><h3>Agendar cita</h3><p>Sede, fecha, hora y tipo: revisión técnico-mecánica o taller.</p><a class="btn btn-primary" th:href="@{/portal/citas}">Ir</a></article>
+			<article class="modulo"><b>Público</b><h3>Consulta por código</h3><p>Código + placa. Línea de tiempo en vivo. Evidencias y costos pedirán cuenta.</p><a class="btn btn-primary" th:href="@{/portal/seguimiento}">Ir</a></article>
+			<article class="modulo"><b>Con cuenta</b><h3>Aprobaciones</h3><p>Hallazgos con fotos y videos. Autorizar o rechazar cada ítem.</p><a class="btn btn-primary" th:href="@{/portal/aprobaciones}">Ir</a></article>
+			<article class="modulo"><b>Solo taller</b><h3>Tienda de repuestos</h3><p>Al autorizar un arreglo, carga piezas con precio, marca y garantía.</p><a class="btn btn-primary" th:href="@{/portal/tienda}">Ir</a></article>
+			<article class="modulo"><b>Con cuenta</b><h3>Pasarela de pagos</h3><p>Tarjeta, PSE o billeteras. El comprobante sale aquí; la factura la emite el Core.</p><a class="btn btn-primary" th:href="@{/portal/pagos}">Ir</a></article>
+			<article class="modulo"><b>Obligatorio para pagar</b><h3>Cuenta y OTP</h3><p>Registro, verificación y historial de vehículos.</p><a class="btn btn-primary" th:href="@{/portal/cuenta}">Ir</a></article>
+		</section>
+	</main>
+</div>
+</body>
+</html>
