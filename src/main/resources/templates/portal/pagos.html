@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments :: head('Pasarela de pagos')}"></head>
-<body>
-<div class="app-shell">
-	<aside th:replace="~{fragments :: sidebar-portal('pagos')}"></aside>
-	<main class="content">
+<head>
+	<th:block th:replace="~{fragments :: head-portal('Pasarela de pagos')}"></th:block>
+</head>
+<body class="portal">
+	<header th:replace="~{fragments :: header-portal('pagos')}"></header>
+	<main class="portal-main">
 		<div class="topbar">
 			<div>
 				<h1>Pasarela de pagos</h1>
@@ -35,6 +36,5 @@
 			</div>
 		</section>
 	</main>
-</div>
 </body>
 </html>

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments :: head('Agendamiento y citas')}"></head>
-<body>
-<div class="app-shell">
-	<aside th:replace="~{fragments :: sidebar-portal('citas')}"></aside>
-	<main class="content">
+<head>
+	<th:block th:replace="~{fragments :: head-portal('Agendamiento y citas')}"></th:block>
+</head>
+<body class="portal">
+	<header th:replace="~{fragments :: header-portal('citas')}"></header>
+	<main class="portal-main">
 		<div class="topbar">
 			<div>
 				<h1>Agendamiento y citas</h1>
@@ -46,6 +47,5 @@
 			</div>
 		</section>
 	</main>
-</div>
 </body>
 </html>

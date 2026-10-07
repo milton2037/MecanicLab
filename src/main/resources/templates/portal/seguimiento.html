@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments :: head('Consulta de estado')}"></head>
-<body>
-<div class="app-shell">
-	<aside th:replace="~{fragments :: sidebar-portal('seguimiento')}"></aside>
-	<main class="content">
+<head>
+	<th:block th:replace="~{fragments :: head-portal('Consulta de estado')}"></th:block>
+</head>
+<body class="portal">
+	<header th:replace="~{fragments :: header-portal('seguimiento')}"></header>
+	<main class="portal-main">
 		<div class="topbar">
 			<div>
 				<h1>Consulta por código único</h1>
@@ -53,6 +54,5 @@
 		</section>
 		<div class="lock">Fotos, videos, costos y pagos están bloqueados. <a th:href="@{/portal/cuenta}"><strong>Identifícate</strong></a> para ver evidencias o autorizar.</div>
 	</main>
-</div>
 </body>
 </html>

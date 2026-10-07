@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments :: head('Notificaciones y aprobaciones')}"></head>
-<body>
-<div class="app-shell">
-	<aside th:replace="~{fragments :: sidebar-portal('aprobaciones')}"></aside>
-	<main class="content">
+<head>
+	<th:block th:replace="~{fragments :: head-portal('Notificaciones y aprobaciones')}"></th:block>
+</head>
+<body class="portal">
+	<header th:replace="~{fragments :: header-portal('aprobaciones')}"></header>
+	<main class="portal-main">
 		<div class="topbar">
 			<div>
 				<h1>Notificaciones y aprobaciones</h1>
@@ -39,6 +40,5 @@
 			</table>
 		</section>
 	</main>
-</div>
 </body>
 </html>

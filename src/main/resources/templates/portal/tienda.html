@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments :: head('Tienda de repuestos')}"></head>
-<body>
-<div class="app-shell">
-	<aside th:replace="~{fragments :: sidebar-portal('tienda')}"></aside>
-	<main class="content">
+<head>
+	<th:block th:replace="~{fragments :: head-portal('Tienda de repuestos')}"></th:block>
+</head>
+<body class="portal">
+	<header th:replace="~{fragments :: header-portal('tienda')}"></header>
+	<main class="portal-main">
 		<div class="topbar">
 			<div>
 				<h1>Tienda de repuestos y cotización</h1>
@@ -26,6 +27,5 @@
 		</section>
 		<p class="note left">La compra en línea reserva stock en Inventario. El despacho lo descuenta el taller.</p>
 	</main>
-</div>
 </body>
 </html>

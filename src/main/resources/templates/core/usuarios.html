@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments :: head('Usuarios, roles y seguridad')}"></head>
+<head>
+	<th:block th:replace="~{fragments :: head('Usuarios, roles y seguridad')}"></th:block>
+</head>
 <body>
 <div class="app-shell">
 	<aside th:replace="~{fragments :: sidebar-interno('core', 'usuarios')}"></aside>

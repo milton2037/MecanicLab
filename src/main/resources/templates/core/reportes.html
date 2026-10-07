@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments :: head('Reportes y analítica')}"></head>
+<head>
+	<th:block th:replace="~{fragments :: head('Reportes y analítica')}"></th:block>
+</head>
 <body>
 <div class="app-shell">
 	<aside th:replace="~{fragments :: sidebar-interno('core', 'reportes')}"></aside>

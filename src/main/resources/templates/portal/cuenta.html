@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments :: head('Cuenta del cliente')}"></head>
-<body>
-<div class="app-shell">
-	<aside th:replace="~{fragments :: sidebar-portal('cuenta')}"></aside>
-	<main class="content">
+<head>
+	<th:block th:replace="~{fragments :: head-portal('Cuenta del cliente')}"></th:block>
+</head>
+<body class="portal">
+	<header th:replace="~{fragments :: header-portal('cuenta')}"></header>
+	<main class="portal-main">
 		<div class="topbar">
 			<div>
 				<h1>Cuenta y autenticación</h1>
@@ -37,6 +38,5 @@
 			</div>
 		</section>
 	</main>
-</div>
 </body>
 </html>

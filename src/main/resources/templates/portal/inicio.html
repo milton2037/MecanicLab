@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments :: head('Portal del cliente')}"></head>
-<body>
-<div class="app-shell">
-	<aside th:replace="~{fragments :: sidebar-portal('portal')}"></aside>
-	<main class="content">
+<head>
+	<th:block th:replace="~{fragments :: head-portal('Portal del cliente')}"></th:block>
+</head>
+<body class="portal">
+	<header th:replace="~{fragments :: header-portal('portal')}"></header>
+	<main class="portal-main">
 		<div class="topbar">
 			<div>
 				<h1>Portal del cliente</h1>
@@ -21,6 +22,5 @@
 			<article class="modulo"><b>Obligatorio para pagar</b><h3>Cuenta y OTP</h3><p>Registro, verificación y historial de vehículos.</p><a class="btn btn-primary" th:href="@{/portal/cuenta}">Ir</a></article>
 		</section>
 	</main>
-</div>
 </body>
 </html>

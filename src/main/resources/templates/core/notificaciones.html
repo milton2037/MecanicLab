@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments :: head('Notificaciones')}"></head>
+<head>
+	<th:block th:replace="~{fragments :: head('Notificaciones')}"></th:block>
+</head>
 <body>
 <div class="app-shell">
 	<aside th:replace="~{fragments :: sidebar-interno('core', 'notificaciones')}"></aside>

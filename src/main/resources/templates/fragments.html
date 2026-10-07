@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:fragment="head(titulo)">
+<th:block th:fragment="head(titulo)">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title th:text="${titulo} + ' | MecanicLab'">MecanicLab</title>
+	<title th:text="${titulo} + ' | MecanicLab interno'">MecanicLab</title>
 	<link rel="stylesheet" th:href="@{/css/app.css}">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
+</th:block>
+<th:block th:fragment="head-portal(titulo)">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title th:text="${titulo} + ' | Portal MecanicLab'">MecanicLab</title>
+	<link rel="stylesheet" th:href="@{/css/portal.css}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+</th:block>
 <body>
 <aside th:fragment="sidebar-interno(area, activo)" class="sidebar">
 	<a class="mark" th:href="@{/dashboard}"><span>ML</span> MecanicLab</a>
@@ -68,20 +76,22 @@
 	</nav>
 </aside>
 
-<aside th:fragment="sidebar-portal(activo)" class="sidebar">
-	<a class="mark" th:href="@{/portal}"><span>ML</span> Portal</a>
-	<nav class="nav">
+<header th:fragment="header-portal(activo)" class="portal-header">
+	<a class="portal-logo" th:href="@{/portal}">
+		<span>ML</span>
+		<strong>MecanicLab</strong>
+		<small>Portal clientes</small>
+	</a>
+	<nav class="portal-nav">
 		<a th:href="@{/portal}" th:classappend="${activo == 'portal'} ? 'active'">Inicio</a>
-		<a th:href="@{/portal/citas}" th:classappend="${activo == 'citas'} ? 'active'">Agendar cita</a>
-		<a th:href="@{/portal/seguimiento}" th:classappend="${activo == 'seguimiento'} ? 'active'">Consultar estado</a>
-		<a th:href="@{/portal/aprobaciones}" th:classappend="${activo == 'aprobaciones'} ? 'active'">Aprobaciones</a>
+		<a th:href="@{/portal/citas}" th:classappend="${activo == 'citas'} ? 'active'">Agendar</a>
+		<a th:href="@{/portal/seguimiento}" th:classappend="${activo == 'seguimiento'} ? 'active'">Mi vehículo</a>
+		<a th:href="@{/portal/aprobaciones}" th:classappend="${activo == 'aprobaciones'} ? 'active'">Aprobar</a>
 		<a th:href="@{/portal/tienda}" th:classappend="${activo == 'tienda'} ? 'active'">Repuestos</a>
-		<a th:href="@{/portal/pagos}" th:classappend="${activo == 'pagos'} ? 'active'">Pagos</a>
-		<a th:href="@{/portal/cuenta}" th:classappend="${activo == 'cuenta'} ? 'active'">Mi cuenta</a>
-		<p class="nav-label">Otros accesos</p>
-		<a th:href="@{/dashboard}">Acceso interno</a>
-		<a th:href="@{/login}">Salir</a>
+		<a th:href="@{/portal/pagos}" th:classappend="${activo == 'pagos'} ? 'active'">Pagar</a>
+		<a th:href="@{/portal/cuenta}" th:classappend="${activo == 'cuenta'} ? 'active'">Cuenta</a>
 	</nav>
-</aside>
+	<a class="portal-exit" th:href="@{/login}">Salir</a>
+</header>
 </body>
 </html>
